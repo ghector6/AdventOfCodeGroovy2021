@@ -11,11 +11,15 @@ int sum
 flagList = numList.collate(3,1)
 
 flagList.eachWithIndex{ it, index ->
-	println "The value of this block is $it and the index is $index"
+	
 	for(num in index){
-		sum = it.sum()
-		println sum
+		if(it.size() >= 3){
+			sum = it.sum()
+		sumList << sum
+		println "The value of this block is $it and the index is $index"
+		}
+		
 	}
 }
-
+println sumList
 
