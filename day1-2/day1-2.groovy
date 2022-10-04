@@ -1,7 +1,13 @@
-List numList = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]  
+import java.io.File
+def numList = []
+new File("/Users/ghector6/MakingDevsProjects/AdventOfCode/day1-1/inputday1-1.txt").eachLine{line -> 
+	int parsedn = Integer.parseInt(line)
+	numList << parsedn
+	}  	
 List flagList = []
 List sumList = []
-def range = (0..2)
+def count = 0
+def flagnum = 595
 int sum 
 
 /*while(numList.size() !=  2){
@@ -16,10 +22,23 @@ flagList.eachWithIndex{ it, index ->
 		if(it.size() >= 3){
 			sum = it.sum()
 		sumList << sum
-		println "The value of this block is $it and the index is $index"
+		//println "The value of this block is $it and the index is $index"
 		}
 		
 	}
 }
-println sumList
+
+//println sumList
+for(i in sumList){
+	if(i > flagnum){
+		count ++
+		
+		//println flagnum
+
+	}
+	flagnum = i
+	
+}
+//println sumList
+println count 
 
