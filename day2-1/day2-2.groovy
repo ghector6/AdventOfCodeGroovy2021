@@ -21,9 +21,4 @@ inputday2.eachLine{ word ->
 		}		
 	}
 }
-println length
-println depth
-
 println "The final result is : " + depth * length
- //println "The depth is : $depth and you move forward : $length meters"
- //println "You move for a total of " + depth * length
