@@ -4,17 +4,9 @@ def zeroFlag = 0
 def oneFlag = 0
 
 test.eachLine{line ->
-	line.each{num ->
-		if(num == "0"){
-			zeroFlag++
-		}else if (num == "1"){
-			oneFlag++
-
+	line.eachWithIndex{num, index ->
+		if(index == 0){
+			println num
 		}
-
-
 	}
-	println zeroFlag
-	
-
 }
