@@ -3,6 +3,7 @@ def test = new File("/Users/ghector6/MakingDevsProjects/AdventOfCode/day3/inputd
 def zeroFlag = []
 def oneFlag = 0
 def ceroflag = 0
+def gammaRate
 
 test.eachLine{line ->
 	line.eachWithIndex{num, index ->
@@ -18,6 +19,14 @@ zeroFlag.findAll{element ->
 		ceroflag++
 	}
 
+
 } 
 
-println ceroflag
+if(oneFlag > ceroflag){
+	gammaRate = "1"
+}else{
+	gammaRate ="0"
+
+}
+
+println gammaRate
