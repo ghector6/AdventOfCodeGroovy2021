@@ -1,25 +1,26 @@
 def test = new File("/Users/ghector6/MakingDevsProjects/AdventOfCode/day3/inputday3.txt").text
 
-def zeroFlag = []
+//def zeroFlag = []
 def oneFlag = 0
 def ceroflag = 0
 def gammaRate
-def lines = test.split("\n").size()
+def lines = test.split("\n").first().split("").size()
+def matrix = []
 
 
 lines.times{lineNum -> 
-	test.eachLine{line -> //this part iterates through the given index of the data lines
+	def newline = []//this part iterates through the given index of the data lines
+	test.eachLine{line ->   		
 		line.eachWithIndex{num, index ->
 			if(index == lineNum){
-				zeroFlag << num
+				newline << num
 			}
-		}
+		}		
 	}
+	matrix << newline
 }
 
-
-
-println zeroFlag
+matrix.each{println it}
 /*
 zeroFlag.findAll{element -> 
 	if(element == "1"){
