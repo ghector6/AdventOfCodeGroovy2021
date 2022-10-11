@@ -4,14 +4,23 @@ def zeroFlag = []
 def oneFlag = 0
 def ceroflag = 0
 def gammaRate
+def lines = test.split("\n").size()
 
-test.eachLine{line ->
-	line.eachWithIndex{num, index ->
-		if(index == 1){
-			zeroFlag << num
+
+lines.times{lineNum -> 
+	test.eachLine{line -> //this part iterates through the given index of the data lines
+		line.eachWithIndex{num, index ->
+			if(index == lineNum){
+				zeroFlag << num
+			}
 		}
 	}
 }
+
+
+
+println zeroFlag
+/*
 zeroFlag.findAll{element -> 
 	if(element == "1"){
 		oneFlag ++
@@ -29,4 +38,4 @@ if(oneFlag > ceroflag){
 
 }
 
-println gammaRate
+println gammaRate*/
