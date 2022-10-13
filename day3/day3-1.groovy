@@ -21,17 +21,18 @@ lines.times{lineNum ->
 	matrix.each{it -> println it}
 	
 	matrix.each{matrixArray -> 
-		def ceroflag = 0
-		def oneFlag = 0
-		matrixArray.findAll{ element ->
-			if(element == "0"){
-				ceroflag++
-			}else if(element == "1"){
-				oneFlag++
-			}
+		println matrixArray.count("0")
+		//def ceroCounter = 0
+		//def oneCounter = 0
+		//matrixArray.findAll{ element ->
+			//if(element == "0"){
+				//ceroCounter++
+			//}else if(element == "1"){
+			//	oneCounter++
+			//}
 
-		}
-		println ceroflag
+		//}
+		
 
 
 	}
