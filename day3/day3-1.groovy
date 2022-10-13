@@ -1,8 +1,8 @@
 def test = new File("/Users/ghector6/MakingDevsProjects/AdventOfCode/day3/inputday3.txt").text
 
 //def zeroFlag = []
-def oneFlag = 0
-def ceroflag = 0
+//def oneFlag = 0
+
 def gammaRate
 def lines = test.split("\n").first().split("").size()
 def matrix = []
@@ -18,11 +18,26 @@ lines.times{lineNum ->
 		}		
 	}
 	matrix << newline
+	matrix.each{it -> println it}
+	
+	matrix.each{matrixArray -> 
+		def ceroflag = 0
+		def oneFlag = 0
+		matrixArray.findAll{ element ->
+			if(element == "0"){
+				ceroflag++
+			}else if(element == "1"){
+				oneFlag++
+			}
+
+		}
+		println ceroflag
+
+
+	}
 }
 
-matrix.each{println it}
-/*
-zeroFlag.findAll{element -> 
+/*matrix.findAll{element -> 
 	if(element == "1"){
 		oneFlag ++
 	}else if(element == "0"){
