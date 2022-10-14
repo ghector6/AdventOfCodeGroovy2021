@@ -6,7 +6,8 @@ def test = new File("/Users/ghector6/MakingDevsProjects/AdventOfCode/day3/inputd
 //def gammaRate =  []
 def lines = test.split("\n").first().split("").size()
 def matrix = []
-int finalNum 
+int gammaDecimal
+int epsilonDecimal 
 
 
 lines.times{lineNum -> 
@@ -46,11 +47,23 @@ lines.times{lineNum ->
 
 
 	}
-	finalNum = gammaRate.reverse().indexed().collect{idx,num -> num * (2 ** idx)}.sum()
+	def epsilonRate = []
+	for(num in gammaRate){
+		if(num == 0){
+			num = 1
+		}else if(num == 1){
+			num = 0
+		}
+		epsilonRate << num
+
+	}
+	epsilonDecimal = epsilonRate.reverse().indexed().collect{idx,num -> num * (2 ** idx)}.sum()
+	gammaDecimal = gammaRate.reverse().indexed().collect{idx,num -> num * (2 ** idx)}.sum()
 
 	
 }
-println finalNum
+println gammaDecimal
+println epsilonDecimal
 
 /*matrix.findAll{element -> 
 	if(element == "1"){
