@@ -6,6 +6,7 @@ def test = new File("/Users/ghector6/MakingDevsProjects/AdventOfCode/day3/inputd
 //def gammaRate =  []
 def lines = test.split("\n").first().split("").size()
 def matrix = []
+int finalNum 
 
 
 lines.times{lineNum -> 
@@ -18,7 +19,7 @@ lines.times{lineNum ->
 		}		
 	}
 	matrix << newline
-	matrix.each{it -> println it}
+	//matrix.each{it -> println it}
 	def gammaRate = []
 	matrix.each{matrixArray -> 
 		
@@ -45,9 +46,11 @@ lines.times{lineNum ->
 
 
 	}
-	println gammaRate
+	finalNum = gammaRate.reverse().indexed().collect{idx,num -> num * (2 ** idx)}.sum()
+
 	
 }
+println finalNum
 
 /*matrix.findAll{element -> 
 	if(element == "1"){
