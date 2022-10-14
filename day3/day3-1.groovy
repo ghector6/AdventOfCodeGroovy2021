@@ -1,9 +1,4 @@
 def test = new File("/Users/ghector6/MakingDevsProjects/AdventOfCode/day3/inputday3.txt").text
-
-//def zeroFlag = []
-//def oneFlag = 0
-
-//def gammaRate =  []
 def lines = test.split("\n").first().split("").size()
 def matrix = []
 int gammaDecimal
@@ -19,8 +14,7 @@ lines.times{lineNum ->
 			}
 		}		
 	}
-	matrix << newline
-	//matrix.each{it -> println it}
+	matrix << newline	
 	def gammaRate = []
 	matrix.each{matrixArray -> 
 		
@@ -30,21 +24,6 @@ lines.times{lineNum ->
 		}else{
 			gammaRate << 1
 		}
-
-
-		 
-		//def ceroCounter = 0
-		//def oneCounter = 0
-		//matrixArray.findAll{ element ->
-			//if(element == "0"){
-				//ceroCounter++
-			//}else if(element == "1"){
-			//	oneCounter++
-			//}
-
-		//}
-		
-
 
 	}
 	def epsilonRate = []
@@ -62,24 +41,5 @@ lines.times{lineNum ->
 
 	
 }
-println gammaDecimal
-println epsilonDecimal
+println gammaDecimal * epsilonDecimal
 
-/*matrix.findAll{element -> 
-	if(element == "1"){
-		oneFlag ++
-	}else if(element == "0"){
-		ceroflag++
-	}
-
-
-} 
-
-if(oneFlag > ceroflag){
-	gammaRate = "1"
-}else{
-	gammaRate ="0"
-
-}
-
-println gammaRate*/
