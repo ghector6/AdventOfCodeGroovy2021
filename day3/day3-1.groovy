@@ -3,7 +3,7 @@ def test = new File("/Users/ghector6/MakingDevsProjects/AdventOfCode/day3/inputd
 //def zeroFlag = []
 //def oneFlag = 0
 
-def gammaRate
+//def gammaRate =  []
 def lines = test.split("\n").first().split("").size()
 def matrix = []
 
@@ -19,9 +19,18 @@ lines.times{lineNum ->
 	}
 	matrix << newline
 	matrix.each{it -> println it}
-	
+	def gammaRate = []
 	matrix.each{matrixArray -> 
-		println matrixArray.count("0")
+		
+		if(matrixArray.count("0") > matrixArray.count("1")){
+			gammaRate << 0
+
+		}else{
+			gammaRate << 1
+		}
+
+
+		 
 		//def ceroCounter = 0
 		//def oneCounter = 0
 		//matrixArray.findAll{ element ->
@@ -36,6 +45,8 @@ lines.times{lineNum ->
 
 
 	}
+	println gammaRate
+	
 }
 
 /*matrix.findAll{element -> 
